@@ -1,0 +1,97 @@
+@charset "UTF-8";
+/*
+|– abstracts/
+| |– _variables.scss # Sass переменные
+| |– _functions.scss # Sass функции
+| |– _mixins.scss # Sass миксины
+| |– _placeholders.scss # Sass плейсхолдеры
+|
+|– vendors/
+| |– _bootstrap.scss # Bootstrap
+| |– _jquery-ui.scss # jQuery UI
+| … # и так далее
+|
+|– base/
+| |– _reset.scss # Reset/normalize
+| |– _typography.scss # Типографика
+| … # Прочее
+|
+|– layout/
+| |– _navigation.scss # Навигация
+| |– _grid.scss # Сетка
+| |– _header.scss # Шапка
+| |– _footer.scss # Футер
+| |– _sidebar.scss # Сайдбар
+| |– _forms.scss # Формы
+| … # и так далее
+|
+|– components/
+| |– _buttons.scss # Кнопки
+| |– _carousel.scss # Карусель
+| |– _cover.scss # Обложка
+| |– _dropdown.scss # Выпадашка
+| … # и так далее
+|
+|– pages/
+| |– _home.scss # Специфичные стили страницы Home
+| |– _contact.scss # Специфичные стили страницы Contact
+| … # и так далее
+|
+|– themes/
+| |– _theme.scss # Тема по умолчанию
+| |– _admin.scss # Тема админа
+| … # и так далее
+|
+*/
+/*
+htmlacademy
+разобраться во всех свойствах
+
+// можно сделать разделение по типам "заполнение" и "контур", 
+// н-р- синяя, по умолчанию вся синяя с белым текстом, или с модификатором типа  --outer - бордер синий фона
+// или фон белый ( кстати без фона можно дополнительным модификаром) если нужна поверх чего-то
+*/
+/*
+.button {
+    display: inline-block;
+    border-radius: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; // дабы не выделяли текст на кнопке
+    touch-action: manipulation;
+    position: relative;
+    max-width: 270px;
+    padding: .35em 1em;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: inherit;
+    vertical-align: middle;
+    text-align: center;
+    white-space: normal;
+    word-wrap: normal;
+    background-color: #302683;
+    border: 3px solid 
+    #302683;
+        border-top-color: rgb(48, 38, 131);
+        border-right-color: rgb(48, 38, 131);
+        border-bottom-color: rgb(48, 38, 131);
+        border-left-color: rgb(48, 38, 131);
+}*/
+/*
+.product {
+    background: #000;
+    width: 100%;
+    
+    @media all and (min-width: 768px) {
+        float: left;
+        width: 50%;
+    }
+    
+    @media all and (min-width: 1024px) {
+        width: 25%;
+    }
+}
+*/
+
+/*# sourceMappingURL=main.css.map */

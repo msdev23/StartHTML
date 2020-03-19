@@ -1,0 +1,95 @@
+// font-weight helper:
+
+// 100 Extra Light or Ultra Light;
+// 200 Light or Thin; 300 Book or Demi;
+// 400 Regular or Normal;
+// 500 Medium;
+// 600 Semibold or Demibold;
+// 700 Bold;
+// 800 Black or Extra Bold or Heavy;
+// 900 Extra Black or Fat or Ultra Black
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl_1, $furl_2) {
+	@font-face {
+		font-family: $fname;
+		font-style: $fstyle;
+		font-weight: $fweight;
+		font-display: swap; // Uncomment to initially display system fonts
+    src: url($furl_1) format("woff2"), url($furl_2) format("woff");
+	}
+}
+
+@include font('Roboto', normal, 400, '../fonts/roboto-regular.woff2', '../fonts/roboto-regular.woff');
+@include font('Roboto', normal, 400, '../fonts/roboto-regular.woff2', '../fonts/roboto-regular.woff');
+
+@include font('Roboto', normal, 200, '../fonts/roboto-light.woff2', '../fonts/roboto-light.woff');
+@include font('Roboto', normal, 200, '../fonts/roboto-light.woff2', '../fonts/roboto-light.woff');
+
+//@include font('Roboto', normal, 400, '../../fonts/roboto-regular.woff2');
+//@include font('Roboto', normal, 400, '../../fonts/roboto-regular.woff2');
+
+
+
+/*
+пример с сайта хтмлакадеми
+
+@font-face {
+    font-weight: 400;
+    font-family: "Muller";
+    font-style: normal;
+    font-display: swap;
+    src: url(/fonts/2DF5B4_F_0.woff2) format("woff2"), url(/fonts/2DF5B4_F_0.woff) format("woff")
+}
+
+@font-face {
+    font-weight: 400;
+    font-family: "Muller";
+    font-style: italic;
+    font-display: optional;
+    src: url(/fonts/Lato-Italic.woff2) format("woff2"), url(/fonts/Lato-Italic.woff) format("woff")
+}
+
+@font-face {
+    font-weight: 500;
+    font-family: "Muller";
+    font-style: normal;
+    font-display: swap;
+    src: url(/fonts/2DF5B4_D_0.woff2) format("woff2"), url(/fonts/2DF5B4_D_0.woff) format("woff")
+}
+
+@font-face {
+    font-weight: 500;
+    font-family: "Muller";
+    font-style: italic;
+    font-display: optional;
+    src: url(/fonts/Lato-MediumItalic.woff2) format("woff2"), url(/fonts/Lato-MediumItalic.woff) format("woff")
+}
+
+@font-face {
+    font-weight: 700;
+    font-family: "Muller";
+    font-style: normal;
+    font-display: swap;
+    src: url(/fonts/2DF5B4_2_0.woff2) format("woff2"), url(/fonts/2DF5B4_2_0.woff) format("woff")
+}
+
+@font-face {
+    font-weight: 700;
+    font-family: "Muller";
+    font-style: italic;
+    font-display: optional;
+    src: url(/fonts/Lato-HeavyItalic.woff2) format("woff2"), url(/fonts/Lato-HeavyItalic.woff) format("woff")
+}
+
+@font-face {
+    font-weight: 400;
+    font-family: "Ubuntu Mono";
+    font-style: normal;
+    font-display: swap;
+    src: url(/fonts/ubuntu-mono.woff2) format("woff2"), url(/fonts/ubuntu-mono.woff) format("woff")
+}
+
+
+*/

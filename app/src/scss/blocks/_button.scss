@@ -1,0 +1,54 @@
+// https://sass-guidelin.es/ru/#section-36 пример структуры компонента (чуть ниже прокрутить)
+
+/*
+htmlacademy
+разобраться во всех свойствах
+
+// можно сделать разделение по типам "заполнение" и "контур", 
+// н-р- синяя, по умолчанию вся синяя с белым текстом, или с модификатором типа  --outer - бордер синий фона
+// или фон белый ( кстати без фона можно дополнительным модификаром) если нужна поверх чего-то
+*/
+/*
+.button {
+    display: inline-block;
+    border-radius: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; // дабы не выделяли текст на кнопке
+    touch-action: manipulation;
+    position: relative;
+    max-width: 270px;
+    padding: .35em 1em;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: inherit;
+    vertical-align: middle;
+    text-align: center;
+    white-space: normal;
+    word-wrap: normal;
+    background-color: #302683;
+    border: 3px solid 
+    #302683;
+        border-top-color: rgb(48, 38, 131);
+        border-right-color: rgb(48, 38, 131);
+        border-bottom-color: rgb(48, 38, 131);
+        border-left-color: rgb(48, 38, 131);
+}*/
+
+
+/*
+.product {
+    background: #000;
+    width: 100%;
+    
+    @media all and (min-width: 768px) {
+        float: left;
+        width: 50%;
+    }
+    
+    @media all and (min-width: 1024px) {
+        width: 25%;
+    }
+}
+*/
