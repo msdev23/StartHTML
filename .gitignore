@@ -1,2 +1,7 @@
 /node_modules/
 desktop.ini
+/app/css/
+/app/fonts/
+/app/js/
+/app/libs/
+/app/index.html
