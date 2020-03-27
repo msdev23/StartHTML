@@ -1,6 +1,6 @@
 
 /**
- * msdev horisontal responsive menu
+ *  responsive horisontal menu
  */
 (function() {
     "use strict";
@@ -9,14 +9,16 @@
     const burger = document.querySelector('.ms-burger');  
     const nav = document.querySelector('.menu');
 
-    const handleClick = () => {    
+    // mobile menu open/close 
+    burgerWrap.addEventListener('click',function(){
         burger.classList.toggle('burger--active');
         nav.classList.toggle('menu--expanded');
         //msOvrl.classList.toggle('menu--expanded');
-    }
-    burgerWrap.addEventListener('click', handleClick);
+    })
 
+    // submenu open/close
     nav.addEventListener('click',function(e){
+
         if (e.target.classList.contains('menu__toggler')) { 
 
             const subMenuToggler = e.target;
@@ -30,12 +32,13 @@
             subMenuToggler.setAttribute('data-show', newShowStatus);
         }
     })
-    
+
 
     function getSubMenuHeight(el) {
         let height = el.offsetHeight;
         return height;
     }
+
 
     function slideToggle(el) {
         let height = getSubMenuHeight(el);
@@ -70,6 +73,5 @@
             }, 0);            
         }
     } // end slideToggle
-
 
 })();
