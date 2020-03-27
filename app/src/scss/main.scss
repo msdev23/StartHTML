@@ -47,7 +47,8 @@
 @charset "UTF-8";
 
 // 1. Configuration and helpers
-//@import "abstracts/variables";
+@import "abstracts/variables";
+@import "abstracts/mixins";
 
 // 2. Vendors
 //@import "libs/bootstrap";
@@ -55,13 +56,14 @@
 //@import "../../../node_modules/magnific-popup/dist/magnific-popup";  
 
 // 3. Base stuff
-//@import "base/fonts";
+@import "base/fonts";
+@import "base/typography";
 
 
 // 4. Layout-related sections
 
 // 5. Components
-@import "blocks/navbar";
+@import "blocks/header-nav";
 @import "blocks/button";
 
 // 6. Page-specific styles

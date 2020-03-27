@@ -67,7 +67,7 @@ function cssGenerate() {
       .src(`${path.src}/${path.dev}/${path.scss}/**/*.scss`)
       .pipe(sourcemaps.init())
       .pipe(plumber())
-      .pipe(sass({ outputStyle: 'nested' }).on('error', sass.logError))
+      .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError)) // nested/expanded
       //.pipe(autoprefixer('last 2 versions'))
       .pipe(sourcemaps.write('.'))
       .pipe(gulp.dest('app/css'))
