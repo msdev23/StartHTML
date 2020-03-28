@@ -49,13 +49,6 @@ $item-bg-color: $menu-bg-color;
   height: 60px;
 }
 
-
-
-.ms-burger-wrap {
-
-}
-
-
 .brand {
   display: flex;
   flex-direction: column;
@@ -91,273 +84,244 @@ $item-bg-color: $menu-bg-color;
 
 
 
-.#{$menu-class} {
-  position: absolute;
-  top: 100%;
-  left: 0;
+.#{$menu-class}  {
 
-  height: 100vh;
-  width: 100%;
-  max-width: 280px;
-
-  z-index: 777;   
-
-  visibility: hidden;  
-  transform: translateX(-100%);
-  transition: all 0.25s ease-out;
-  
-  // Раскрытие
-  &--expanded {
-    visibility: visible;
-    transform: translateX(0);
-  }
-
-  &__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  &__item {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 2px;
-  }
-
-  &__link {
-    flex-grow: 1;
-    height: 45px;
-    background-color: $item-bg-color;
-    text-decoration: none;
-  }
-
-  &__link-text {
-    color: #fff;
-    //border-bottom: 1px solid rgba(255, 255, 255, .35);
-  }
-
-  &__sub-menu {
+    display: block;
+    height: 100vh;
     width: 100%;
-    padding: 0;
-    padding-left: 15px;
-    
-    //height: 0;
-    overflow: hidden;
-    display: none;
+    max-width: 280px;
+    background: $menu-bg-color;
 
-    transition: all .25s ease-out;  
-
-    &.is-open {
-     // height: 150px;
-     display: block;
-     
-    }
-  }  
-  
-  &__toggler {
-    display: flex;
-    width: 45px;
-    height: 45px;
-   border: 0;
-    outline: 0; 
-    cursor: pointer;
-
-    background-size: 30%;
-    background-repeat: no-repeat;
-    background-position: 50% 54%;
-    background-color: darken($item-bg-color, 5%);
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3e%3cpath fill='%23ffffff' d='M226 49l-98 98-98-98L0 79l128 128L256 79z'/%3e%3c/svg%3e ");
-
-    transition: all 0.25s ease-out;  
-    
-
-    &[data-show="false"] + .menu__sub-menu {
-
-
-      //margin-top: -100%;
-      //visibility: hidden;
-      //transform: translate(0, -100%);
-
-      //transform: translate(0, -100%);
-      //transform: translateY(-100%);
-      //opacity: 0.9;
-      //height: 0;
-      
-    }
-    &[data-show="true"] + .menu__sub-menu {
-      
-      
-      //margin-top: 0;
-      //visibility: visible;
-      //transform: translate(0, 0); 
-    }
-  }
-
-
-
-
-
-
-}
-
-
-
-
-
-.#{$menu-class}-desktop {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  max-width: 280px;
-  background: $menu-bg-color;  
-
-  visibility: hidden;
-  transition: all 0.25s ease-out;
-  transform: translateX(-100%);
-
-  z-index: 999;
-  
-  &--expanded {
-    visibility: visible;
-    transform: translateX(0);
-  } 
-
-
-  &__list {
-    
-    height: 100%;    
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    @media (min-width: 992px) {
-      display: flex;    
-    }  
-  }
-
-
-
-  &__item {
-    position: relative;
-  }
-
-  &__link {
-    display: flex;
-    height: 100%;
-    padding: 0 0 0 12px;
-    font-size: 19px;    
-    color: $color-text;
-    text-decoration: none;
-    transition: all 0.1s ease-in-out;
-
-    &-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;      
-    }
-
-    &:hover {
-      background: darken($item-bg-color, 3%);
-    }     
-  }  
-
-  &__sub-menu {
     position: absolute;
     top: 100%;
-    left: 0;
-    width: 200px; 
-    list-style: none;
-    padding: 0;
-    padding: 15px 0;
-    margin: 0;
-    background: lighten($item-bg-color, 4%);
+    left: 0;      
 
-    transform: translateX(-10%);
-    visibility: hidden;
-    opacity: 0;
+    visibility: hidden;  
+    transform: translateX(-100%);
+    transition: all 0.25s ease-out;  // !!! --- делает анимацию перехода от мобильной к десктоп - УДАЛИТЬ  
+    
+    z-index: 777;
 
-    .#{$menu-class}__link { 
-      height: 45px;
+    &--expanded { // Раскрытие
+        visibility: visible;
+        transform: translateX(0);
+    }    
+
+ 
+    @media (min-width: $breakpoint) {
+        display: flex;        
+        flex-grow: 1;
+        justify-content: right;
+
+        max-width: $max-width;
+        background: $menu-bg-color;
+
+        position: relative;
+        top: 0;
+        height: 100%;
+        visibility: visible;
+        transform: none;
+        transition: none;
+    } 
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+
+        @media (min-width: $breakpoint) {
+            display: flex;    
+            height: 100%;    
+            margin: 0;
+            padding: 0;
+            list-style: none;            
+        }        
+    }
+    
+    &__item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 2px;
+
+
+        @media (min-width: $breakpoint) {
+            position: relative;
+        }             
     }
 
-    & & {
-      background: lighten($item-bg-color, 1%);
-      transform: translateX(0) translateY(-15%);
-      top: -15px;
-      left: 100%;
+
+  
+
+    &__link {
+        flex-grow: 1;
+        height: 45px;
+        background-color: $item-bg-color;
+        text-decoration: none;
+
+        &-text {
+            color: #fff;            
+        }        
+
+
+        @media (min-width: $breakpoint) {
+            display: flex;
+            height: 100%;
+            padding: 0 12px;
+            font-size: 19px;    
+            color: $color-text;
+            text-decoration: none;
+            transition: all 0.1s ease-in-out;
+
+            &-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;                
+            }
+
+            &:hover {
+                background: darken($item-bg-color, 3%);                
+            }
+        }         
     }    
-  }  
 
-  &__item--has-children {
 
-    & > .#{$menu-class}__link {
-      display: flex;
-      justify-content: space-between; // раскидаем текст ссылки и стрелку по краям
+    &__sub-menu {
+        width: 100%;
+        padding: 0;
+        padding-left: 15px;
+        overflow: hidden;
+        display: none;
+    
+        transition: all .25s ease-out;  
+    
+        &.is-open {
+         display: block;
+        }
 
-      /* стрелка родителя */
-      &::after {
-        content: "";
+        @media (min-width: $breakpoint) {
+            display: block;     
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 200px; 
+            list-style: none;
+            padding: 0;
+            padding: 15px 0;
+            margin: 0;
+            background: lighten($item-bg-color, 4%);
+        
+            transform: translateX(-10%);
+            visibility: hidden;
+            opacity: 0;   
+            
+            .#{$menu-class}__link { 
+                height: 45px;
+            }
+          
+            & & {
+                background: lighten($item-bg-color, 1%);
+                transform: translateX(0) translateY(-15%);
+                top: -15px;
+                left: 100%;
+            }              
+        }            
+    }  
+      
+
+    &__toggler {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         width: 45px;
-        margin-left: 7px;
+        height: 45px;
+        border: 0;
+        outline: 0; 
+        cursor: pointer;
     
         background-size: 30%;
         background-repeat: no-repeat;
         background-position: 50% 54%;
-
         background-color: darken($item-bg-color, 5%);
-    
         background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3e%3cpath fill='%23ffffff' d='M226 49l-98 98-98-98L0 79l128 128L256 79z'/%3e%3c/svg%3e ");
-        opacity: 0.75;
-        transition: all 0.25s ease-out;    
-      }  
-    }
-
-    /**
-     * Поведение при наведении на родительский пункт
-     */    
-    &:hover {      
-      background: darken($item-bg-color, 3%); // цвет. род. пункта
-
-      // раскрытие подменю
-      & > .#{$menu-class}__sub-menu {
-        transform: translateX(0%);
-        visibility: visible;
-        opacity: 1;
-        transition: all 0.25s ease-out;        
-      }
-
-      // вращение стрелки при раскрытии подменю
-      & > .#{$menu-class}__link::after { 
-        transform: rotate(-90deg);        
-      }      
-      
-    }
-  }
- 
-  /**
-   * Корневой родитель
-   */  
-  &__item--ancestor {
-
-    &:hover {
-
-      & > .#{$menu-class}__link {
+    
+        transition: all 0.25s ease-out;  
         
-        // у корневого родителя стрелка не должна вращаться
-        &::after {
-          transform: rotate(0deg);
+
+        @media (min-width: $breakpoint) {
+            display: none;
+        }        
+    } 
+
+  
+
+
+
+    &__item--has-children {
+
+        @media (min-width: $breakpoint) {
+            & > .#{$menu-class}__link {
+                display: flex;
+                justify-content: space-between; // раскидаем текст ссылки и стрелку по краям
+        
+                /* стрелка родителя */
+                &::after {
+                    content: "";
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 12px;
+                    margin-left: 7px;
+                
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    background-position: 50% 54%;
+                
+                    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3e%3cpath fill='%23ffffff' d='M226 49l-98 98-98-98L0 79l128 128L256 79z'/%3e%3c/svg%3e ");
+                    opacity: 0.75;
+                    transition: all 0.25s ease-out;    
+                }  
+            }
+      
+            // Поведение при наведении на родительский пункт  
+            &:hover {  
+                background: darken($item-bg-color, 3%); // цвет. род. пункта
+        
+                // раскрытие подменю
+                & > .#{$menu-class}__sub-menu {    
+                overflow: visible;    
+                transform: translateX(0%);
+                visibility: visible;
+                opacity: 1;
+                transition: all 0.25s ease-out;        
+                }
+        
+                // вращение стрелки при раскрытии подменю
+                & > .#{$menu-class}__link::after { 
+                transform: rotate(-90deg);        
+                }
+            }
         }
-      }
     }
-  }  
+   
+    /**
+     * Корневой родитель
+     */  
+    &__item--ancestor {
 
-}
+        @media (min-width: $breakpoint) {
+            &:hover {  
+                & > .#{$menu-class}__link {
+              
+                    // у корневого родителя стрелка не должна вращаться
+                    &::after {
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+        }
+    }
+    
+  } // end menu
 
 
 
@@ -367,11 +331,22 @@ $item-bg-color: $menu-bg-color;
 
 
 
-.#{$menu-class}-desctop {
 
-  display: flex;
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////
+
+.#{$menu-class}-master  {
+
+
   max-width: $max-width;
   background: $menu-bg-color;
+  
   
   @media (max-width: $breakpoint) {
     position: absolute;
@@ -411,6 +386,10 @@ $item-bg-color: $menu-bg-color;
 
   &__item {
     position: relative;
+  }
+
+  &__toggler {
+      display: none;
   }
 
   &__link {
