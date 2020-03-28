@@ -37,7 +37,7 @@
 // nav variables
 $menu-class: menu; // класс блока меню
 $max-width: 1200px;
-$breakpoint: 1992px; // 992
+$breakpoint: 1500px; // 992
 
 
 $color-text: #fff;
@@ -52,15 +52,7 @@ $item-bg-color: $menu-bg-color;
 
 
 .ms-burger-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;  
-  align-items: flex-end; // бургер справа
-  flex-basis: 100%;
-  flex-grow: 1;  
-  cursor: pointer;
 
-  background: rgba(255,255,255,.5);
 }
 
 
@@ -81,9 +73,19 @@ $item-bg-color: $menu-bg-color;
 }
 
 .ms-burger-wrap {
-  @media (min-width: $breakpoint) {
-    display: none;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: flex-end; // бургер справа
+    flex-basis: 100%;
+    flex-grow: 1;  
+    cursor: pointer;
+  
+    background: rgba(255,255,255,.5);  
+      
+    @media (min-width: $breakpoint) {
+        display: none;
+    }
 }
 
 
