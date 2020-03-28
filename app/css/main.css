@@ -145,17 +145,6 @@ body {
   height: 60px;
 }
 
-.ms-burger-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  flex-basis: 100%;
-  flex-grow: 1;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.5);
-}
-
 .brand {
   display: flex;
   flex-direction: column;
@@ -172,7 +161,18 @@ body {
   transform: scale(1.05);
 }
 
-@media (min-width: 1992px) {
+.ms-burger-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  flex-basis: 100%;
+  flex-grow: 1;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+@media (min-width: 1500px) {
   .ms-burger-wrap {
     display: none;
   }
@@ -395,7 +395,7 @@ body {
    */
 }
 
-@media (max-width: 1992px) {
+@media (max-width: 1500px) {
   .menu-desctop {
     position: absolute;
     top: 100%;
@@ -671,6 +671,7 @@ m0a
 body {
   background: red;
   margin: 0;
+  background: pink;
 }
 
 .header__menu-wrap {
