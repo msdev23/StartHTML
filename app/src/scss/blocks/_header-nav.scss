@@ -1,27 +1,7 @@
 /**
  *  msdev horizontal responsive menu
- *  --------------------
- *  
- *  
+ *  --------------------  
  */
-
-/*
-// Экстрамалые девайсы («телефоны», < 576px)
-// Нет @media, т.к. это по умолчанию в Bootstrap
-
-// Малые девайсы («ландшафтные телефоны», >= 576px)
-@media (min-width: 576px) { ... }
-
-// Средние девайсы («таблетки», >= 768px)
-@media (min-width: 768px) { ... }
-
-// Большие девайсы (десктопы, >= 992px)
-@media (min-width: 992px) { ... }
-
-// Экстрабольшие девайсы (большие десктопы, >= 1200px)
-@media (min-width: 1200px) { ... }
-*/ 
-
 
 /*
   Правки для меню:
@@ -44,28 +24,20 @@ $breakpoint: 1500px; // 992
 $color-text: #fff;
 $menu-bg-color: $accent;
 $item-bg-color: $menu-bg-color;
-
-.menu-container {
-    display: flex;
-    justify-content: center;
-    height: 60px;
-}
-
 .brand {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  & img {
-    max-height: 32px;
-    transition: all ease-in-out 300ms;    
-
-    &:hover {
-      transform: scale(1.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    & img {
+        max-height: 32px;
+        transition: all ease-in-out 300ms;    
+  
+        &:hover {
+            transform: scale(1.05);
+        }
     }
-  }
 }
-
 .ms-burger-wrap {
     display: flex;
     flex-direction: column;
@@ -81,18 +53,23 @@ $item-bg-color: $menu-bg-color;
 }
 
 
+.menu-container {
+    display: flex;
+    justify-content: center;
+    height: 60px;
+}
 
 
-.#{$menu-class}  { 
 
+.#{$menu-class}  {
     display: block;
     height: 100vh;
-    width: 100%;
-    max-width: 280px;
+    width: 80%;
+    max-width: 320px;
 
     position: absolute;
-    top: 100%;
-    left: 0;      
+    top: 100%; /* проверить необходимость отступа снизу (т.к. 100vh)*/
+    left: 0;
 
     visibility: hidden;  
     transform: translateX(-100%);
@@ -110,9 +87,7 @@ $item-bg-color: $menu-bg-color;
         display: flex;        
         flex-grow: 1;
         justify-content: flex-end;
-
         max-width: $max-width;
-
         position: relative;
         top: 0;
         height: 100%;
@@ -143,16 +118,21 @@ $item-bg-color: $menu-bg-color;
         @media (min-width: $breakpoint) {
             position: relative;
             margin: 0;
-        }             
-    }
-
-
-  
+        }
+    } 
 
     &__link {
         flex-grow: 1;
         height: 45px;
         text-decoration: none;
+
+        @media (min-width: $breakpoint) {
+            display: flex;
+            height: 100%;
+            font-size: 19px;
+            text-decoration: none;
+            transition: all 0.1s ease-in-out;
+        }        
 
         &-text {        
             height: 100%; 
@@ -162,21 +142,7 @@ $item-bg-color: $menu-bg-color;
             padding: 0 12px;
         }        
 
-
-        @media (min-width: $breakpoint) {
-            display: flex;
-            height: 100%;
-            font-size: 19px;
-            text-decoration: none;
-            transition: all 0.1s ease-in-out;
-
-            &-text {              
-            }
-
-            &:hover {
-                //background: darken($item-bg-color, 3%);                
-            }
-        }         
+        
     }    
 
 

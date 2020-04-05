@@ -5,9 +5,12 @@
 (function() {
     "use strict";
 
-    const burgerWrap = document.querySelector('.ms-burger-wrap');
-    const burger = document.querySelector('.ms-burger');  
-    const nav = document.querySelector('.menu');
+    const burgerWrap = document.querySelector('.ms-burger-wrap'),
+        burger = document.querySelector('.ms-burger'),
+        nav = document.querySelector('.menu'),
+        togglerSelector = 'menu__toggler',
+        childSelector = 'menu__item--has-children';
+        
 
     // mobile menu open/close 
     burgerWrap.addEventListener('click',function(){
@@ -19,7 +22,7 @@
     // submenu open/close
     nav.addEventListener('click',function(e){
 
-        if (e.target.classList.contains('menu__toggler')) { 
+        if (e.target.classList.contains(togglerSelector)) { 
 
             const subMenuToggler = e.target;
             const subMenu = subMenuToggler.nextElementSibling;
@@ -38,7 +41,7 @@
                 детей и найти нужный) и закроем sub-menu
                 Только потом отработаем открытие нового суб-меню
              */            
-            const parent = subMenuToggler.closest('.menu__item--has-children').parentElement; // родитель открываемого пункта
+            const parent = subMenuToggler.closest(childSelector ).parentElement; // родитель открываемого пункта
             const siblingsCount = parent.children.length; // считаем кол-во элементов на это уровне            
             const sibling = parent.children; // получаем все дочерние узлы
 

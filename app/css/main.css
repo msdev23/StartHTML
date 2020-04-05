@@ -110,26 +110,8 @@ body {
 
 /**
  *  msdev horizontal responsive menu
- *  --------------------
- *  
- *  
+ *  --------------------  
  */
-/*
-// Экстрамалые девайсы («телефоны», < 576px)
-// Нет @media, т.к. это по умолчанию в Bootstrap
-
-// Малые девайсы («ландшафтные телефоны», >= 576px)
-@media (min-width: 576px) { ... }
-
-// Средние девайсы («таблетки», >= 768px)
-@media (min-width: 768px) { ... }
-
-// Большие девайсы (десктопы, >= 992px)
-@media (min-width: 992px) { ... }
-
-// Экстрабольшие девайсы (большие десктопы, >= 1200px)
-@media (min-width: 1200px) { ... }
-*/
 /*
   Правки для меню:
   .sub-menu: 
@@ -141,12 +123,6 @@ body {
   - добавить модификаторы выравнивания как у бс4 (justify-content-center/end/left..)
   - Предусмотреть нехватку места для появления меню 3 уровня, если справа мало места, выводить слева
  */
-.menu-container {
-  display: flex;
-  justify-content: center;
-  height: 60px;
-}
-
 .brand {
   display: flex;
   flex-direction: column;
@@ -178,13 +154,20 @@ body {
   }
 }
 
+.menu-container {
+  display: flex;
+  justify-content: center;
+  height: 60px;
+}
+
 .menu {
   display: block;
   height: 100vh;
-  width: 100%;
-  max-width: 280px;
+  width: 80%;
+  max-width: 320px;
   position: absolute;
   top: 100%;
+  /* проверить необходимость отступа снизу (т.к. 100vh)*/
   left: 0;
   visibility: hidden;
   transform: translateX(-100%);
@@ -250,14 +233,6 @@ body {
   text-decoration: none;
 }
 
-.menu__link-text {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 12px;
-}
-
 @media (min-width: 1500px) {
   .menu__link {
     display: flex;
@@ -266,6 +241,14 @@ body {
     text-decoration: none;
     transition: all 0.1s ease-in-out;
   }
+}
+
+.menu__link-text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 12px;
 }
 
 .menu__sub-menu {
@@ -543,6 +526,9 @@ htmlacademy
 // можно сделать разделение по типам "заполнение" и "контур", 
 // н-р- синяя, по умолчанию вся синяя с белым текстом, или с модификатором типа  --outer - бордер синий фона
 // или фон белый ( кстати без фона можно дополнительным модификаром) если нужна поверх чего-то
+
+---
+при создании состояний (типа progress) учесть что не всем можно добавлять псевдоэлементы (input submit и другие не закрывающиеся)
 */
 /*
 зеленая по центру 
