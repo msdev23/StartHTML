@@ -22,10 +22,6 @@
 }
 
 @include font('Roboto', normal, 400, '../fonts/roboto-regular.woff2', '../fonts/roboto-regular.woff');
-@include font('Roboto', normal, 400, '../fonts/roboto-regular.woff2', '../fonts/roboto-regular.woff');
-
-@include font('Roboto', normal, 200, '../fonts/roboto-light.woff2', '../fonts/roboto-light.woff');
 @include font('Roboto', normal, 200, '../fonts/roboto-light.woff2', '../fonts/roboto-light.woff');
 
-//@include font('Roboto', normal, 400, '../../fonts/roboto-regular.woff2');
-//@include font('Roboto', normal, 400, '../../fonts/roboto-regular.woff2');
+@include font('Montserrat', normal, 800, '../fonts/roboto-light.woff2', '../../fonts/montserrat-black.woff');

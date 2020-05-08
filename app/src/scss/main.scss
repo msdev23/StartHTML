@@ -54,17 +54,20 @@
 //@import "libs/bootstrap";
 //@import "../../../node_modules/bootstrap/dist/css/bootstrap.min"; 
 //@import "../../../node_modules/magnific-popup/dist/magnific-popup";  
+@import "../libs/lazyload/lazyload";
 
 // 3. Base stuff
+@import "base/base";
 @import "base/fonts";
-@import "base/typography";
+@import "base/helpers";
 
 
 // 4. Layout-related sections
 
 // 5. Components
-@import "blocks/header-nav";
-@import "blocks/button";
+@import "blocks/common-ui"; 
+//@import "blocks/header-nav";
+//@import "blocks/button";
 
 // 6. Page-specific styles
 

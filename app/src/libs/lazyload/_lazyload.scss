@@ -1,0 +1,22 @@
+// Достаточно будет только первых 4 строчек из .lazy 
+// это даст фон и форму на месте изображения, чтоб не было скачков
+// остальное просто украшение, когда картинка прогрузится вместо резкой подмены она появится плавно
+.lazy {
+    display: block;
+    width: 100%;
+    height: auto;      
+    background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7);
+
+    &.loaded {
+        opacity: 1;
+        animation: lazy-load-fade-in 1 0.15s ease-out; 
+    }
+}
+@keyframes lazy-load-fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

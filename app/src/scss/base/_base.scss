@@ -1,0 +1,85 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body {
+    position: relative;
+	line-height: 1.65; 
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 400;
+    font-size: $font-size;
+    background: $body-bg;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+    color: $accent;
+    //text-decoration: none;
+}
+
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder {
+	color: #666;
+}
+
+::selection {
+    color: #fff;
+    background: $accent;
+}
+
+input, textarea {
+	outline: none;
+	&:focus:required:invalid { border-color: red }
+	&:required:valid { border-color: green }
+}
+
+
+body {
+	min-width: 320px;
+	position: relative;
+	line-height: $line-height-base;
+	overflow-x: hidden;
+
+  
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: $font-size;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    padding: 0;
+    margin: 0;
+    font-family: $title-font;
+    font-weight: 800;
+}
+// calc(1.5rem + .25vw); - вариант smashingmagazine.com
+/*
+16x + 320/100 * 0.25 = 16 - 
+если множитель базовой высоты(16) будет равен 0.95
+то заголовок при ширине 320px будет 16px
+https://math24.biz/equation -- уравнения
+https://web2.0calc.com/     -- калькулятор
+ множ | 320 | 576   | 768   | 992
+-----------------------------
+ 0.95 | 16  | 16.64 | 17.12 | 17.68
+*/
+
+
+h1 { font-size: 1.85rem;  }
+h2 { font-size: 1.5rem;   }
+h3 { font-size: 1.125rem; }
+h4 { font-size: 1rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 1rem; }
