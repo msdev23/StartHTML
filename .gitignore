@@ -1,7 +1,10 @@
-/node_modules/
-desktop.ini
-/app/css/
-/app/fonts/
-/app/js/
-/app/libs/
-/app/index.html
+# сначала все в игнор
+*
+
+# исключить из игнора файлик
+!gulpfile.js
+!package.json
+!README.md
+
+# исключить из игнора папку с содержимым
+!app/_src/*
