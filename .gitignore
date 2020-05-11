@@ -4,6 +4,7 @@
 # исключить из игнора файлик
 !gulpfile.js
 !package.json
+!package-lock.json
 !README.md
 
 # исключить из игнора папку с содержимым
