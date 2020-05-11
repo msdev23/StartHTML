@@ -1,2 +1,485 @@
+<<<<<<< HEAD
 @charset "UTF-8";.lazy{display:block;width:100%;height:auto;background-image:url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)}.lazy.loaded{opacity:1;-webkit-animation:lazy-load-fade-in 1 .15s ease-out;animation:lazy-load-fade-in 1 .15s ease-out}@-webkit-keyframes lazy-load-fade-in{0%{opacity:0}100%{opacity:1}}@keyframes lazy-load-fade-in{0%{opacity:0}100%{opacity:1}}html{-webkit-box-sizing:border-box;box-sizing:border-box;font-size:16px}body{position:relative;line-height:1.65;font-family:Roboto,sans-serif;font-style:normal;font-weight:400;font-size:.875rem;background:#fff}a{color:rgba(255,230,0,.884)}::-webkit-input-placeholder{color:#666}::-moz-placeholder{color:#666}:-ms-input-placeholder{color:#666}::-ms-input-placeholder{color:#666}::placeholder{color:#666}::-moz-selection{color:#fff;background:rgba(255,230,0,.884)}::selection{color:#fff;background:rgba(255,230,0,.884)}input,textarea{outline:0}input:focus:required:invalid,textarea:focus:required:invalid{border-color:red}input:required:valid,textarea:required:valid{border-color:green}body{min-width:320px;position:relative;line-height:1.45;overflow-x:hidden;font-family:Roboto;font-style:normal;font-weight:400;font-size:.875rem}h1,h2,h3,h4,h5,h6{padding:0;margin:0;font-family:Montserrat,sans-serif;font-weight:800}h1{font-size:1.85rem}h2{font-size:1.5rem}h3{font-size:1.125rem}h4{font-size:1rem}h5{font-size:1rem}h6{font-size:1rem}@font-face{font-family:Roboto;font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/roboto-regular.woff2) format("woff2"),url(../fonts/roboto-regular.woff) format("woff")}@font-face{font-family:Roboto;font-style:normal;font-weight:200;font-display:swap;src:url(../fonts/roboto-light.woff2) format("woff2"),url(../fonts/roboto-light.woff) format("woff")}@font-face{font-family:Montserrat;font-style:normal;font-weight:800;font-display:swap;src:url(../fonts/roboto-light.woff2) format("woff2"),url(../../fonts/montserrat-black.woff) format("woff")}.wrapper{width:100%;min-height:100%;overflow:hidden;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}._container{width:100%;max-width:1200px;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (max-width:990){._container{max-width:970px}}@media (max-width:768){._container{max-width:970px}}@media (max-width:580){._container{max-width:970px}}._row{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-left:-15px;margin-right:-15px}@media (max-width:767px){.test-adaptive-font{font-size:calc(24px + 27.2 * ((100vw - 320px)/ 1200))}}@media (min-width:767px){.test-adaptive-font{font-size:calc(24px + 16 * (100vw / 1200))}}@media (min-width:1200px){.test-adaptive-font{font-size:40px}}
+=======
+@charset "UTF-8";
+/*
+|– abstracts/
+| |– _variables.scss # Sass переменные
+| |– _functions.scss # Sass функции
+| |– _mixins.scss # Sass миксины
+| |– _placeholders.scss # Sass плейсхолдеры
+|
+|– vendors/
+| |– _bootstrap.scss # Bootstrap
+| |– _jquery-ui.scss # jQuery UI
+| … # и так далее
+|
+|– base/
+| |– _reset.scss # Reset/normalize
+| |– _typography.scss # Типографика
+| … # Прочее
+|
+|– layout/
+| |– _navigation.scss # Навигация
+| |– _grid.scss # Сетка
+| |– _header.scss # Шапка
+| |– _footer.scss # Футер
+| |– _sidebar.scss # Сайдбар
+| |– _forms.scss # Формы
+| … # и так далее
+|
+|– components/
+| |– _buttons.scss # Кнопки
+| |– _carousel.scss # Карусель
+| |– _cover.scss # Обложка
+| |– _dropdown.scss # Выпадашка
+| … # и так далее
+|
+|– pages/
+| |– _home.scss # Специфичные стили страницы Home
+| |– _contact.scss # Специфичные стили страницы Contact
+| … # и так далее
+|
+|– themes/
+| |– _theme.scss # Тема по умолчанию
+| |– _admin.scss # Тема админа
+| … # и так далее
+|
+*/
+.lazy {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7);
+}
+
+.lazy.loaded {
+  opacity: 1;
+  animation: lazy-load-fade-in 1 0.15s ease-out;
+}
+
+@keyframes lazy-load-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  position: relative;
+  line-height: 1.65;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  background: #fff;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: rgba(255, 230, 0, 0.884);
+}
+
+::placeholder {
+  color: #666;
+}
+
+::selection {
+  color: #fff;
+  background: rgba(255, 230, 0, 0.884);
+}
+
+input, textarea {
+  outline: none;
+}
+
+input:focus:required:invalid, textarea:focus:required:invalid {
+  border-color: red;
+}
+
+input:required:valid, textarea:required:valid {
+  border-color: green;
+}
+
+body {
+  min-width: 320px;
+  position: relative;
+  line-height: 1.45;
+  overflow-x: hidden;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+}
+
+/*
+16x + 320/100 * 0.25 = 16 - 
+если множитель базовой высоты(16) будет равен 0.95
+то заголовок при ширине 320px будет 16px
+https://math24.biz/equation -- уравнения
+https://web2.0calc.com/     -- калькулятор
+ множ | 320 | 576   | 768   | 992
+-----------------------------
+ 0.95 | 16  | 16.64 | 17.12 | 17.68
+*/
+h1 {
+  font-size: 1.85rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/roboto-regular.woff2") format("woff2"), url("../fonts/roboto-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("../fonts/roboto-light.woff2") format("woff2"), url("../fonts/roboto-light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../fonts/roboto-light.woff2") format("woff2"), url("../../fonts/montserrat-black.woff") format("woff");
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+._container {
+  width: 100%;
+  max-width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (max-width: 990) {
+  ._container {
+    max-width: 970px;
+  }
+}
+
+@media (max-width: 768) {
+  ._container {
+    max-width: 970px;
+  }
+}
+
+<<<<<<< HEAD
+@media (max-width: 580) {
+  ._container {
+    max-width: 970px;
+  }
+=======
+.menu-desctop__item {
+  position: relative;
+}
+
+.menu-desctop__link {
+  display: flex;
+  height: 100%;
+  padding: 0 12px;
+  font-size: 19px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+}
+
+.menu-desctop__link-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-desctop__link:hover {
+  background: #3e7359;
+}
+
+.menu-desctop__sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  list-style: none;
+  padding: 0;
+  padding: 15px 0;
+  margin: 0;
+  background: #4a8a6b;
+  transform: translateX(-10%);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.menu-desctop__sub-menu .menu__link {
+  height: 45px;
+}
+
+.menu-desctop__sub-menu .menu-desctop__sub-menu {
+  background: #458064;
+  transform: translateX(0) translateY(-15%);
+  top: -15px;
+  left: 100%;
+}
+
+.menu-desctop__item--has-children {
+  /**
+     * Поведение при наведении на родительский пункт
+     */
+}
+
+.menu-desctop__item--has-children > .menu__link {
+  display: flex;
+  justify-content: space-between;
+  /* стрелка родителя */
+}
+
+.menu-desctop__item--has-children > .menu__link::after {
+  content: "";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 12px;
+  margin-left: 7px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 54%;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3e%3cpath fill='%23ffffff' d='M226 49l-98 98-98-98L0 79l128 128L256 79z'/%3e%3c/svg%3e ");
+  opacity: 0.75;
+  transition: all 0.25s ease-out;
+}
+
+.menu-desctop__item--has-children:hover {
+  background: #3e7359;
+}
+
+.menu-desctop__item--has-children:hover > .menu__sub-menu {
+  transform: translateX(0%);
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.25s ease-out;
+}
+
+.menu-desctop__item--has-children:hover > .menu__link::after {
+  transform: rotate(-90deg);
+}
+
+.menu-desctop__item--ancestor:hover > .menu__link::after {
+  transform: rotate(0deg);
+}
+
+/* --- Burger --- */
+.ms-burger {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0 25px;
+}
+
+.ms-burger span {
+  margin: 0 auto;
+  position: relative;
+  top: 12px;
+}
+
+.ms-burger span:before, .ms-burger span:after {
+  position: absolute;
+  content: '';
+}
+
+.ms-burger span, .ms-burger span:before, .ms-burger span:after {
+  width: 30px;
+  height: 6px;
+  background-color: #000;
+  display: block;
+}
+
+.ms-burger span:before {
+  margin-top: -12px;
+}
+
+.ms-burger span:after {
+  margin-top: 12px;
+}
+
+/* --- animate variant 1 --- */
+.example5 span {
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  /*-webkit-transition-delay: 0.2s;  transition-delay: 0.2s;*/
+}
+
+.example5.burger--active span {
+  background-color: rgba(0, 0, 0, 0);
+  /*-webkit-transition-delay: 0.02s; transition-delay: 0.02s;*/
+}
+
+.example5.burger--active span:before {
+  margin-top: 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  /*-webkit-transition-delay: 0s, 0.2s; transition-delay: 0s, 0.2s;*/
+}
+
+.example5 span:before,
+.example5 span:after {
+  -webkit-transition-property: margin, -webkit-transform;
+  transition-property: margin, transform;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  /*-webkit-transition-delay: 0.2s, 0s; transition-delay: 0.2s, 0s;*/
+}
+
+.example5.burger--active span:after {
+  margin-top: 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  /*-webkit-transition-delay: 0s, 0.2s; transition-delay: 0s, 0.2s;*/
+}
+
+/* --- Burger end --- */
+/*
+htmlacademy
+разобраться во всех свойствах
+
+// можно сделать разделение по типам "заполнение" и "контур", 
+// н-р- синяя, по умолчанию вся синяя с белым текстом, или с модификатором типа  --outer - бордер синий фона
+// или фон белый ( кстати без фона можно дополнительным модификаром) если нужна поверх чего-то
+*/
+/*
+зеленая по центру 
+bdrs10
+color: #fff;
+
+yellow
+color: #fff;
+bdrs6
+m0a
+*/
+.btn {
+  display: inline-block;
+  margin: 0 auto;
+  padding: .45em 1.5em;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #437d61;
+  border: 3px solid #437d61;
+  border-radius: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+  position: relative;
+  line-height: inherit;
+  text-align: center;
+  white-space: nowrap;
+  word-wrap: normal;
+  cursor: pointer;
+}
+
+.btn--outline {
+  background: none;
+  color: #333;
+}
+
+.btn--outline:hover {
+  color: #fff;
+}
+
+.btn:hover {
+  background: #37664f;
+  border-color: #37664f;
+}
+
+.btn--full-width {
+  display: block;
+}
+
+.btn--center {
+  display: block;
+  width: -moz-min-content;
+  /* Firefox */
+  width: -webkit-min-content;
+  /* Chrome */
+  width: min-content;
+}
+
+body {
+  background: red;
+  margin: 0;
+}
+
+.header__menu-wrap {
+  display: flex;
+  justify-content: center;
+  background: #437d61;
+>>>>>>> c06344a756559e70997cec9666c071208d1ec3d8
+}
+
+._row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+>>>>>>> 132892da7f5121147d52af63e2be364084c18fe7
 /*# sourceMappingURL=main.css.map */
