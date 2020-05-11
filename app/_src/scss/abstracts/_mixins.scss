@@ -1,0 +1,74 @@
+
+/*
+миксины медиазапросов
+@mixin adaptive-font 
+strip-unit($num) - удаляем единицу измерения (199px -> 199)
+*/
+
+// миксины медиазапросов
+// Выводит медиазапросы с предустановленными брейкпоинтами
+// принимает ключ брейкпоинта, например sm
+// исползуя media-min(md) указываем верхнюю границу, т.е. сработает когда разрешение меньше чем md (767.98)
+// исползуя media-max(md) указываем нижнюю границу, т.е. сработает когда разрешение больше или равно md значению
+// исползуя media-between(sm, md) от 576px до 768px
+// Пример:
+// @include media-max(md) {
+//     $__item {
+//         color: red;
+//     }
+// }
+
+$grid-breakpoints: (
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl
+) !default;
+
+// @include media-max(md) вернёт @media (min-width: 768){...}
+@mixin media-max($name, $breakpoints: $grid-breakpoints) {
+    $max: map-get($breakpoints, $name) - 0.02;
+    @media (max-width: $max) {
+        @content;
+    }
+}
+// @include media-min(md), если md == 768, вернёт 768 - 0.02: @media (max-width: 767.98){...}
+@mixin media-min($name, $breakpoints: $grid-breakpoints) {
+    $min: map-get($breakpoints, $name);
+    @media (min-width: $min) {
+        @content;
+    }
+}
+// @include media-between(sm, md)   вернёт @media (min-width: 576px) and (max-width: 768px) {...}
+@mixin media-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+    $max: map-get($breakpoints, $upper);
+    $min: map-get($breakpoints, $lower);
+    @media (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+     
+
+// Адаптивный текст
+@mixin adaptive-font($mobSize, $pcSize, $max: strip-unit($max-width) ) {
+    
+    $mobSize: strip-unit($mobSize);
+    $pcSize: strip-unit($pcSize);
+    $addSize: $pcSize - $mobSize;
+    $addMobSize: $addSize + $addSize * 0.7;
+    @media (max-width: 767px) {
+        font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$max}));
+    }
+    @media (min-width: 767px) {
+        font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw  / #{$max}));
+    }
+    @media (min-width: $max-width) {
+        font-size: $pcSize + px;
+    }
+}
+
+
+// Удаление единицы измерения (из 3px получим 3)
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}
