@@ -1,4 +1,5 @@
 //const appFolder = require('path').basename(__dirname);
+const imgFormats = '{jpg,jpeg,png,gif,svg,ico,webp}';
 const appFolder = 'app';
 const srcFolder = appFolder + '/_src';
 const path = {
@@ -13,14 +14,14 @@ const path = {
         html: [srcFolder + '/**/*.html', '!' + srcFolder + '/**/_*.html'],
         css: srcFolder + '/scss/main.scss',
         js: srcFolder + '/js/scripts.js',
-        img: srcFolder + '/media/**/*.{jpg,jpeg,png,gif,svg,ico,webp}',
+        img: [srcFolder + '/media/**/*.'+imgFormats, '!' + srcFolder + '/media/**/_*.'+imgFormats],
         fonts: srcFolder + '/fonts/**/*.ttf'
     },
     wath: {
         html: srcFolder + '/**/*.html',
         css: srcFolder + '/scss/**/*.scss',
         js: srcFolder + '/**/*.js',
-        img: srcFolder + '/media/**/*.{jpg,jpeg,png,gif,svg,ico,webp}',
+        img: [srcFolder + '/media/**/*.'+imgFormats, '!' + srcFolder + '/media/**/_*.'+imgFormats],
     },
     clean: [ appFolder + '/**', '!' + srcFolder + '/**']
 };
@@ -51,7 +52,7 @@ function browserSync() {
             baseDir: './' + appFolder
         },
         port: 3000,
-        open: true, // не будет открывать новое окно
+        open: false, // не будет открывать новое окно
         notify: false // нотис в браузере об обновлении
     })
 }
@@ -76,7 +77,7 @@ function css() {
             })
         )
         .pipe(autoprefixer('last 5 versions')) // расставляем вендорные префиксы
-        .pipe(cleanCss())     // минифицируем
+        //.pipe(cleanCss())     // минифицируем
         .pipe(sourcemaps.write('.')) // создаём карту
         .pipe(dest(path.app.css)) // выгружаем
         .pipe(browsersync.stream())
